@@ -250,6 +250,83 @@ section:last-child{border-bottom:none;}
 .out-dot{width:8px;height:8px;border-radius:50%;background:var(--navy);flex-shrink:0;margin-top:6px;}
 .out-item p{font-size:.85rem;color:var(--ink2);line-height:1.68;margin:0;}
 .out-item strong{color:var(--ink);font-weight:700;}
+
+/* ════════ RESPONSIVE ════════ */
+
+/* Large desktop → laptop: pull in the wide margins */
+@media (max-width:1280px){
+  .wrap{padding:0 72px;}
+}
+
+/* Laptop → tablet */
+@media (max-width:1024px){
+  .wrap{padding:0 48px;}
+  nav{padding:0 32px;}
+  section{padding:96px 0 72px;}
+  .g-60,.g-40{grid-template-columns:1fr 1fr;gap:36px;}
+  .g4{grid-template-columns:repeat(2,1fr);}
+}
+
+/* Tablet: collapse the two-column splits to a single stacked column */
+@media (max-width:880px){
+  .wrap{padding:0 40px;}
+  nav{padding:0 24px;}
+  section{padding:84px 0 64px;}
+  .g-55,.g-60,.g-40{grid-template-columns:1fr;gap:32px;align-items:start;}
+  .g-60 img{height:auto;}
+  .g3{grid-template-columns:1fr 1fr;}
+  .dg-split{grid-template-columns:1fr!important;}
+  .dg-split>div{padding:24px 28px!important;}
+  .dg-info{padding:32px 28px 24px!important;}
+  /* journey rail stacks; swap right borders for bottom borders */
+  .jrail{grid-template-columns:1fr;}
+  .jstep{border-right:none;border-bottom:1px solid var(--border);}
+  .jstep:last-child{border-bottom:none;}
+  /* image stack inside Key Design Decision is centered when stacked */
+  .dg-split>div:first-child .ph{min-height:220px;}
+}
+
+/* Phone */
+@media (max-width:600px){
+  body{font-size:14px;}
+  .wrap{padding:0 20px;}
+  section{padding:64px 0 52px;}
+  /* nav: drop the brand, let the links scroll horizontally instead of overflowing */
+  nav{padding:0 14px;height:48px;}
+  .nav-brand{display:none;}
+  .nav-links{gap:0;flex:1;min-width:0;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{padding:5px 10px;font-size:.66rem;white-space:nowrap;}
+  /* every multi-column grid becomes a single column */
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .g-55,.g-60,.g-40{gap:24px;}
+  /* hero: don't force full viewport height once stacked */
+  #title{min-height:auto!important;padding-top:96px!important;}
+  /* IA table: stack label above description */
+  .ia-row{flex-direction:column;}
+  .ia-lbl{width:100%;border-right:none;border-bottom:1px solid var(--blue-mid);}
+  /* tighten the process timeline */
+  .timeline{gap:44px;}
+  .tstep{gap:18px;}
+  .dg-split>div,.dg-info{padding:20px!important;}
+  .dg-card{margin-bottom:48px!important;}
+}
+
+/* Very small phones */
+@media (max-width:400px){
+  .wrap{padding:0 16px;}
+  section{padding:56px 0 44px;}
+  .hero-h{font-size:2.25rem;}
+  .nav-links a{padding:5px 8px;}
+  .cbtns .cbtn{flex:1 1 auto;justify-content:center;}
+}
+
+/* Short / landscape viewports: reclaim vertical space from full-height sections */
+@media (max-height:520px) and (orientation:landscape){
+  #title{min-height:auto!important;padding-top:80px!important;padding-bottom:48px!important;}
+  #close{min-height:auto!important;}
+  section{padding:64px 0 48px;}
+}
 </style>
 </head>
 <body>
@@ -604,16 +681,16 @@ section:last-child{border-bottom:none;}
     <div class="rule-dash rev" style="margin-bottom:72px;"></div>
 
     <!-- 6 — Loading state (dark) -->
-    <div style="background:var(--navy);border-radius:16px;overflow:hidden;margin-bottom:72px;" class="rev d1">
+    <div style="background:var(--navy);border-radius:16px;overflow:hidden;margin-bottom:72px;" class="rev d1 dg-card">
       <!-- Top: info strip -->
-      <div style="padding:40px 52px 32px;">
+      <div class="dg-info" style="padding:40px 52px 32px;">
         <div class="tag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);margin-bottom:14px;">Key Design Decision</div>
         <h3 class="h2" style="color:#fff;margin-bottom:10px;">Overcoming the hurdle of latency — literally.</h3>
         <p style="color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.75;max-width:680px;">Tech team mentioned cases where it took <strong style="color:#fff;">~20 seconds</strong> for the API response to reach us — exactly when users would be most likely to leave. I suggested a mini game — an homage to Chrome's dino, instantly recognisable to anyone in tech. It broke the ice while we captured missing contact details and showed resume tips.</p>
       </div>
 
       <!-- Bottom: hero screenshot left, game right -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;">
+      <div class="dg-split" style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;">
         <!-- LHS: hero screenshot placeholder -->
         <div style="padding:24px 0 32px 52px;display:flex;flex-direction:column;justify-content:flex-end;">
           <img src="images/OvercomingLatency.png" alt="Loading screen — overcoming latency" style="width:100%;height:auto;display:block;border-radius:12px;">

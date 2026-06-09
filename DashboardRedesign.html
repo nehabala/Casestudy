@@ -228,6 +228,7 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:999;padding:0 48px;height:52px
 .close-links{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
 .close-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;border:1px solid rgba(250,248,244,0.2);color:var(--cream);transition:background 0.2s,border-color 0.2s;background:rgba(250,248,244,0.06)}
 .close-link:hover{background:rgba(212,82,26,0.3);border-color:var(--accent-mid)}
+.close-credit{margin-top:40px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,248,244,0.35)}
 
 /* TAG ROW */
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
@@ -239,6 +240,79 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:999;padding:0 48px;height:52px
 .d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ═══ RESPONSIVE ═══ */
+/* Tablet / small laptop */
+@media (max-width:1024px){
+  nav{padding:0 32px}
+  .nav-links{gap:20px}
+  .hero{padding:108px 40px 64px}
+  .section{padding:80px 40px}
+  .phase-chapter{padding:64px 40px}
+  .phase-connector{padding:32px 40px}
+  .phase-bar-inner{padding:0 40px}
+  .close-section{padding:64px 40px}
+  /* collapse the widest grids first */
+  .four-col{grid-template-columns:repeat(2,1fr)}
+  .finding-grid{grid-template-columns:repeat(2,1fr)}
+  /* hide left side-dot rail (overlaps content on narrow viewports) */
+  .section-progress{display:none}
+}
+
+/* Tablet portrait — single-column reading layouts */
+@media (max-width:768px){
+  html{font-size:15px}
+  nav{padding:0 20px;height:48px}
+  .nav-links{display:none}
+  .hero{padding:96px 24px 56px;min-height:auto}
+  .hero-sub{font-size:16px}
+  .hero-meta{margin-top:36px}
+  .hero-meta-item{padding:16px 24px 16px 0;margin-right:24px}
+  .section{padding:64px 24px}
+  .phase-chapter{padding:56px 24px}
+  .phase-connector{padding:28px 24px}
+  .close-section{padding:56px 24px}
+  /* phase bar becomes horizontally scrollable instead of overflowing */
+  #phase-bar.visible{height:42px}
+  /* full-width, evenly distributed number icons */
+  .phase-bar-inner{padding:0 20px;height:42px;gap:0;justify-content:space-between}
+  .phase-bar-label{display:none}
+  .phase-tab-sub{display:none}
+  /* numbers only — labels are too wide for phones */
+  .phase-tab-text{display:none}
+  .phase-tab{padding:5px;gap:0}
+  .phase-tab-num{width:22px;height:22px;font-size:11px}
+  .phase-tab-arrow{margin:0;font-size:12px}
+  /* stack every multi-column layout to one column */
+  .two-col,
+  .three-col,
+  .four-col,
+  .finding-grid,
+  .hmw-grid{grid-template-columns:1fr !important}
+  .two-col{gap:40px}
+  .three-col,.four-col{gap:16px}
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr !important}
+  /* metrics table → stacked cards */
+  [style*="grid-template-columns:180px 1fr 1fr"]{display:none !important}
+  .metric-row{grid-template-columns:1fr;gap:6px;padding:18px 0}
+  .metric-why::before{content:'Why — ';color:var(--ink-4);font-weight:600}
+  .metric-what::before{content:'Result — ';color:var(--ink-4);font-weight:600}
+  /* scope box stacks its icon above text */
+  .scope-box{flex-direction:column;gap:20px;padding:28px 24px}
+}
+
+/* Phones */
+@media (max-width:480px){
+  .hero{padding:88px 18px 48px}
+  .section{padding:52px 18px}
+  .phase-chapter{padding:48px 18px}
+  .close-section{padding:48px 18px}
+  .hero-meta{margin-top:28px}
+  .hero-meta-item{border-right:none;margin-right:0;padding:12px 0;width:100%}
+  .pullquote{padding:20px 22px}
+  .card,.hmw-card,.research-card-header,.research-card-body{padding-left:20px;padding-right:20px}
+}
 </style>
 </head>
 <body>
@@ -695,19 +769,14 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:999;padding:0 48px;height:52px
 <div class="close-section">
   <div class="close-texture"></div><div class="close-blob"></div>
   <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;">
-    <div style="margin-bottom:24px;opacity:0.9"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.69238 16.1211V49.7749C3.69239 38.557 3.86833 17.6916 21.1923 17.6916C38.0191 17.6916 37.7949 38.7814 37.7949 49.7749" stroke="white" stroke-width="5.38462"/>
-<path d="M20.968 49.5511C26.0483 49.5511 30.1667 44.5287 30.1667 38.3332C30.1667 32.1377 26.0483 27.1152 20.968 27.1152C15.8877 27.1152 11.7693 32.1377 11.7693 38.3332C11.7693 44.5287 15.8877 49.5511 20.968 49.5511Z" fill="white"/>
-<path d="M59.5134 42.6507L44.1839 35.6336C43.5471 35.3421 42.8361 35.8606 42.9112 36.557C43.3749 40.8554 43.4606 43.7136 43.3345 47.8519C43.3158 48.4657 43.9019 48.9221 44.4906 48.7475L59.3949 44.3271C60.1901 44.0913 60.2672 42.9958 59.5134 42.6507Z" fill="white"/>
-</svg></div>
-    <div class="close-title">Yay, you made it<br><span>to the end!</span></div>
-    <div style="font-size:15px;color:rgba(250,248,244,0.5);margin:16px auto 24px;max-width:400px;line-height:1.6">Thanks for reading. I hope the thinking came through as clearly as the pixels.</div>
-    <div class="close-name">Neha Balasundaram</div>
-    <div class="close-role">Sr. Product Designer · InterviewKickstart</div>
+    <div style="margin-bottom:24px;opacity:0.9"><img src="images/logo.png" alt="Logo" style="height:64px;width:auto;display:block;filter:brightness(0) invert(1)"/></div>
+    <div class="close-title">Hey, you made it<br><span>this far!</span></div>
+    <div class="close-name">Neha Balasundaram · Sr. Product Designer</div>
+    <div class="close-role">Comb-shaped digital designer · Mixed media artist · Amateur birder · Mostly outdoors</div>
     <div class="close-links">
-      <a href="#" class="close-link">💼 LinkedIn</a>
-      <a href="#" class="close-link">✉️ Email</a>
+      <a href="#" class="close-link">↗ LinkedIn</a>
     </div>
+    <div class="close-credit">DESIGNED &amp; DEVELOPED BY — YOURS TRULY.</div>
   </div>
 </div>
 
