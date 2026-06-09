@@ -30,7 +30,7 @@
 
   --sz-display: 190px; --sz-h1: 106px; --sz-h2: 62px; --sz-h3: 36px;
   --sz-lead: 27px; --sz-body: 22px; --sz-body-lg: 24px;
-  --sz-label: 13px; --sz-stat: 84px; --sz-wm: 346px;
+  --sz-label: 14px; --sz-stat: 84px; --sz-wm: 346px;
 }
 
 /* viewport-base.css */
@@ -77,10 +77,10 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 .t-lead{font-family:'Jost',sans-serif;font-weight:300;font-size:var(--sz-lead);line-height:1.65;color:var(--fg-2);}
 .t-body{font-family:'Jost',sans-serif;font-weight:300;font-size:var(--sz-body);line-height:1.75;color:var(--fg-2);}
 .t-body-lg{font-family:'Jost',sans-serif;font-weight:300;font-size:var(--sz-body-lg);line-height:1.6;color:var(--fg-2);}
-.t-label{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:var(--sz-label);letter-spacing:.15em;text-transform:uppercase;color:var(--fg-3);}
-.t-kicker{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:var(--sz-label);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.t-label{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:var(--sz-label);letter-spacing:.15em;text-transform:uppercase;color:var(--fg-3);}
+.t-kicker{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:var(--sz-label);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
 .t-stat{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:var(--sz-stat);line-height:1;letter-spacing:-.02em;color:var(--accent);}
-.t-caption{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);}
+.t-caption{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);}
 
 /* === LIGHT SLIDE === */
 .slide.light{background:var(--bg-light);}
@@ -98,7 +98,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 .slide.light .chrome-foot{border-top-color:var(--border-light);}
 
 /* === CONTENT AREA === */
-.ca{position:absolute;top:68px;bottom:62px;left:var(--px);right:var(--px);display:flex;flex-direction:column;justify-content:center;}
+.ca{position:absolute;top:68px;bottom:62px;left:var(--px);right:var(--px);display:flex;flex-direction:column;justify-content:flex-start;padding-top:32px;}
 
 /* === COMPONENTS === */
 .kicker-block{display:flex;flex-direction:column;gap:11px;margin-bottom:var(--gm);}
@@ -133,7 +133,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 .timeline{display:flex;gap:0;align-items:stretch;}
 .tl-item{flex:1;padding-top:18px;padding-right:24px;border-top:1px solid var(--border);}
 .slide.light .tl-item{border-top-color:var(--border-light);}
-.tl-num{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.tl-num{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .tl-title{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:22px;line-height:1.3;color:var(--fg);margin-bottom:8px;}
 .slide.light .tl-title{color:var(--fg-light);}
 .tl-body{font-family:'Jost',sans-serif;font-weight:300;font-size:19px;line-height:1.55;color:var(--fg-2);}
@@ -142,7 +142,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 /* Chapter/cover/closing */
 .slide-chapter{background:var(--bg);}
 .ch-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:var(--py) var(--px);z-index:1;}
-.ch-num{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.ch-num{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
 .ch-rule{width:var(--rule);height:1px;background:var(--accent);margin-bottom:var(--gm);}
 .slide-cover,.slide-closing{background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:var(--py) var(--px);position:relative;overflow:hidden;}
 .edge-line-t{position:absolute;top:0;left:0;right:0;height:1px;background:var(--border);}
@@ -155,16 +155,16 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 .sf-node{display:flex;flex-direction:column;align-items:center;gap:13px;width:210px;}
 .sf-circle{width:52px;height:52px;border-radius:50%;border:1px solid var(--border-light);background:var(--bg-light);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;}
 .sf-circle.hi{border-color:var(--accent);background:rgba(200,82,74,.08);}
-.sf-circle span{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.sf-circle span{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
 .sf-label{text-align:center;font-family:'Jost',sans-serif;font-weight:300;font-size:17px;line-height:1.4;color:var(--fg-light-2);}
 
 /* === KOLB 2×2 DIAGRAM === */
 .kolb-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;position:relative;}
 .kolb-cell{border:1px solid var(--border-light);padding:30px 34px;display:flex;flex-direction:column;gap:10px;}
-.kolb-cell-num{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
+.kolb-cell-num{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
 .kolb-cell-title{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:28px;line-height:1.2;color:var(--fg-light);}
 .kolb-cell-sub{font-family:'Jost',sans-serif;font-weight:300;font-size:19px;line-height:1.5;color:var(--fg-light-2);}
-.kolb-cell-tag{font-family:'JetBrains Mono',monospace;font-weight:300;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-light-3);margin-top:4px;}
+.kolb-cell-tag{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-light-3);margin-top:4px;}
 
 /* Arrows overlay for Kolb grid */
 .kolb-arrow-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;}
@@ -263,7 +263,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s4">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Overview</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:32px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Structure</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gl);" data-anim="fade-up" data-delay="1">Six sessions, <em>twelve hours</em> of learning</h2>
 
@@ -338,10 +338,10 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s7">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Analysis Phase</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:28px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Learning Areas</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">Four <em>learning journeys</em></h2>
-    <div class="two-two" style="flex:1;">
+    <div class="two-two">
       <div class="col-item" data-anim="fade-up" data-delay="2">
         <span class="t-caption" style="color:var(--accent);">01</span>
         <div class="col-rule"></div>
@@ -377,7 +377,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s8">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Analysis Phase</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:28px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Objectives</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">Three kinds of <em>learning outcomes</em></h2>
     <div class="three-col" style="margin-top:6px;">
@@ -483,7 +483,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s12">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Design Phase</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:28px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Activity Structure</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">Three types of <em>designed activities</em></h2>
     <div class="three-col" style="margin-top:6px;">
@@ -516,12 +516,12 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s13">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Design Phase</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:24px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Learning Design</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">How activities <em>follow the cycle</em></h2>
 
     <!-- Kolb 2×2 diagram -->
-    <div class="kolb-grid" data-anim="fade-up" data-delay="2" style="flex:1;max-height:600px;">
+    <div class="kolb-grid" data-anim="fade-up" data-delay="2" style="margin-top:24px;">
       <!-- Top-left: Experience -->
       <div class="kolb-cell">
         <div class="kolb-cell-num">01 · Experience</div>
@@ -554,18 +554,18 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
       <!-- Clockwise arrows in the gaps -->
       <svg class="kolb-arrow-svg" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="ka" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
-            <polygon points="0 0,7 2.5,0 5" fill="rgba(25,43,27,0.35)"/>
+          <marker id="ka" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <polygon points="2 2, 8 5, 2 8" fill="rgba(25,43,27,0.35)"/>
           </marker>
         </defs>
         <!-- Right: top gap, left→right (Experience→Observe) -->
-        <line x1="45%" y1="28%" x2="55%" y2="28%" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"/>
+        <line x1="calc(50% - 15px)" y1="25%" x2="calc(50% + 15px)" y2="25%" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"></line>
         <!-- Down: right gap, top→bottom (Observe→Conceptualize) -->
-        <line x1="75%" y1="45%" x2="75%" y2="55%" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"/>
+        <line x1="75%" y1="calc(50% - 15px)" x2="75%" y2="calc(50% + 15px)" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"></line>
         <!-- Left: bottom gap, right→left (Conceptualize→Experiment) -->
-        <line x1="55%" y1="72%" x2="45%" y2="72%" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"/>
+        <line x1="calc(50% + 15px)" y1="75%" x2="calc(50% - 15px)" y2="75%" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"></line>
         <!-- Up: left gap, bottom→top (Experiment→Experience) -->
-        <line x1="25%" y1="55%" x2="25%" y2="45%" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"/>
+        <line x1="25%" y1="calc(50% + 15px)" x2="25%" y2="calc(50% - 15px)" stroke="rgba(25,43,27,0.25)" stroke-width="1.5" marker-end="url(#ka)"></line>
       </svg>
     </div>
   </div>
@@ -652,7 +652,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s17">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Design Phase · Long Activity</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:28px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Long Activity · Groups of 3</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">Redesigning a product <em>across five stages</em></h2>
     <p class="t-body" style="max-width:800px;margin-bottom:var(--gl);" data-anim="fade-up" data-delay="2">Students choose a product and progressively apply each session's learnings to analyse and redesign it. Class time is allocated throughout the module.</p>
@@ -707,7 +707,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s19">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Assessment</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:28px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Evaluation</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">Three modes of <em>assessment</em></h2>
     <div class="three-col" style="margin-top:6px;">
@@ -761,10 +761,10 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
 ===================================================== -->
 <section class="slide light" id="s21">
   <div class="chrome-top"><div class="chrome-row"><span class="t-label">Development Phase</span><span class="t-label">Sustainability and Design</span></div></div>
-  <div class="ca" style="justify-content:flex-start;padding-top:28px;">
+  <div class="ca">
     <div class="kicker-block" data-anim="fade-up" data-delay="0"><span class="t-kicker">Designed Artefacts</span><div class="coral-rule"></div></div>
     <h2 class="t-h2" style="margin-bottom:var(--gm);" data-anim="fade-up" data-delay="1">Three core <em>teaching materials</em></h2>
-    <div class="three-col" style="margin-top:6px;">
+    <div class="three-col" style="margin-top:6px; align-items:stretch;">
       <div class="col-item" data-anim="fade-up" data-delay="2">
         <div class="col-rule"></div>
         <h3 class="t-h3">Lesson Plan</h3>
@@ -773,6 +773,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
           <li><span class="em-dash" aria-hidden="true">—</span><span class="t-body">Session plans: discussions, activities, presentations, long + home activity</span></li>
           <li><span class="em-dash" aria-hidden="true">—</span><span class="t-body">Activity elaborations &amp; assessment criteria</span></li>
         </ul>
+        <a href="https://online.fliphtml5.com/nehabala/pcdn/#p=1" target="_blank" style="display:inline-block; margin-top:auto; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:400; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(200,82,74,0.3); padding-bottom:4px; transition:border-color 0.2s;">View Lesson Plan &rarr;</a>
       </div>
       <div class="col-item" data-anim="fade-up" data-delay="3">
         <div class="col-rule"></div>
@@ -782,6 +783,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
           <li><span class="em-dash" aria-hidden="true">—</span><span class="t-body">"Umbrella questions" to guide teacher and student</span></li>
           <li><span class="em-dash" aria-hidden="true">—</span><span class="t-body">Topics, content, further reading, and references</span></li>
         </ul>
+        <a href="https://online.fliphtml5.com/nehabala/rvog/#p=1" target="_blank" style="display:inline-block; margin-top:auto; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:400; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(200,82,74,0.3); padding-bottom:4px; transition:border-color 0.2s;">View Information Manual &rarr;</a>
       </div>
       <div class="col-item" data-anim="fade-up" data-delay="4">
         <div class="col-rule"></div>
@@ -791,6 +793,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
           <li><span class="em-dash" aria-hidden="true">—</span><span class="t-body">Activity outlines: time, grouping, instructions, prompts</span></li>
           <li><span class="em-dash" aria-hidden="true">—</span><span class="t-body">Space to write, draw, and stick. Appendix.</span></li>
         </ul>
+        <a href="https://online.fliphtml5.com/nehabala/ztbi/#p=1" target="_blank" style="display:inline-block; margin-top:auto; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:400; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(200,82,74,0.3); padding-bottom:4px; transition:border-color 0.2s;">View Task Book &rarr;</a>
       </div>
     </div>
   </div>
@@ -890,7 +893,8 @@ img,video,canvas,svg{max-width:100%;max-height:100%;}
     <div data-anim="fade-up" data-delay="5">
       <p class="t-label" style="color:var(--fg-2);margin-bottom:14px;">Published in</p>
       <h3 class="t-h3" style="font-size:40px;"><em>Fundamentals of Sustainability and Design</em></h3>
-      <p class="t-label" style="color:var(--fg-2);margin-top:16px;letter-spacing:.18em;">CBSE Design Thinking Curriculum · Class 10 · Page 53</p>
+      <p class="t-label" style="color:var(--fg-2);margin-top:16px;margin-bottom:24px;letter-spacing:.18em;">CBSE Design Thinking Curriculum · Class 10 · Page 53</p>
+      <a href="https://cbseacademic.nic.in/web_material/Manuals/DT_Curriculum10.pdf" target="_blank" style="display:inline-block; margin-top:24px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:400; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(200,82,74,0.3); padding-bottom:4px; transition:border-color 0.2s;">View CBSE Curriculum PDF &rarr;</a>
     </div>
   </div>
 </section>
