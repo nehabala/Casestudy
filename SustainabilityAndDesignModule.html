@@ -1977,6 +1977,10 @@
           d.style.background = isLight ? 'rgba(25,43,27,.18)' : '';
         });
         dots[n].style.background = isLight ? 'rgba(25,43,27,.65)' : '';
+        
+        // Update URL hash
+        const targetId = slides[n].getAttribute('id') || ('s' + (n + 1));
+        history.replaceState(null, null, '#' + targetId);
       }
 
       function bindKeys() {
@@ -2033,7 +2037,36 @@
       scaleStage();
       window.addEventListener('resize', scaleStage);
       buildDots();
-      goTo(0);
+      
+      // Parse initial hash if present
+      function handleHash() {
+        if (window.location.hash) {
+          const hashTarget = document.querySelector(window.location.hash);
+          if (hashTarget && hashTarget.classList.contains('slide')) {
+            const targetIndex = Array.prototype.indexOf.call(slides, hashTarget);
+            if (targetIndex !== -1 && targetIndex !== current) {
+              goTo(targetIndex);
+              return;
+            }
+          }
+        }
+      }
+      
+      let startSlide = 0;
+      if (window.location.hash) {
+        try {
+          const hashTarget = document.querySelector(window.location.hash);
+          if (hashTarget && hashTarget.classList.contains('slide')) {
+            const idx = Array.prototype.indexOf.call(slides, hashTarget);
+            if (idx !== -1) startSlide = idx;
+          }
+        } catch(e) {} // ignore invalid selector errors
+      }
+      goTo(startSlide);
+      
+      // Listen for external hash changes (e.g. user editing the URL)
+      window.addEventListener('hashchange', handleHash);
+      
       bindKeys();
       bindTouch();
       bindWheel();
